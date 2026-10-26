@@ -9,6 +9,7 @@ Quarto enables you to weave together content and executable code into a finished
 ```{r}
 library(tidyverse)
 library(palmerpenguins)
+library(ggplot2)
 ```
 
 ```{r}
@@ -25,5 +26,13 @@ avg_bill_len <-  my_penguins |>
 ```
 
 ```{r}
-
+ggplot(my_penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() + 
+  labs(
+    title = "Palmer Pengiun Bill Length vs. Flipper Length by species",
+    x = "Bill Length (mm)",
+    y = "Flipper Length (mm)",
+    color = "Species"
+    
+  )
 ```
